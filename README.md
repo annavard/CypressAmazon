@@ -1,8 +1,8 @@
 # CypressAmazon
 
-How to run the test cases?
+## How to run the test cases?
 
-1. Clone the current repository into your machine $ git clone PATH
+1. Clone the current repository into your machine $ git clone https://github.com/annavard/CypressAmazon.git
 
 2. Install Cypress to the project folder. For details refer to cypress documentation:
 https://docs.cypress.io/guides/getting-started/installing-cypress.html#System-requirements
