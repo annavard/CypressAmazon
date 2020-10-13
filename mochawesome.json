@@ -1,0 +1,267 @@
+{
+    "stats": {
+        "suites": 3,
+        "tests": 5,
+        "passes": 2,
+        "pending": 0,
+        "failures": 3,
+        "start": "2020-10-12T15:38:16.402Z",
+        "end": "2020-10-12T15:39:38.090Z",
+        "duration": 62876,
+        "testsRegistered": 5,
+        "passPercent": 40,
+        "pendingPercent": 0,
+        "other": 0,
+        "hasOther": false,
+        "skipped": 0,
+        "hasSkipped": false
+    },
+    "results": [
+        {
+            "uuid": "d965458f-f78e-46a6-be32-57823dfbfd29",
+            "title": "",
+            "fullFile": "cypress/integration/scenario2.spec.js",
+            "file": "cypress/integration/scenario2.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [],
+            "suites": [
+                {
+                    "uuid": "ddc08d16-3bc4-4ac1-afba-cfb1df7906f4",
+                    "title": "Check displayed number of results for category Smart Home | Televisions",
+                    "fullFile": "",
+                    "file": "",
+                    "beforeHooks": [],
+                    "afterHooks": [],
+                    "tests": [
+                        {
+                            "title": "Selects Smart Home category",
+                            "fullTitle": "Check displayed number of results for category Smart Home | Televisions Selects Smart Home category",
+                            "timedOut": null,
+                            "duration": 15524,
+                            "state": "failed",
+                            "speed": null,
+                            "pass": false,
+                            "fail": true,
+                            "pending": false,
+                            "context": null,
+                            "code": "cy.get('#nav-hamburger-menu').click();\ncy.get('#hmenu-canvas').should('be.visible');\ncy.get('.hmenu li').contains('Smart Home').find('i').click();\ncy.get('.hmenu-title').contains(/^smart home$/).should('be.visible');",
+                            "err": {
+                                "message": "AssertionError: Timed out retrying: Expected to find element: `.hmenu-title`, but never found it.",
+                                "estack": "AssertionError: Timed out retrying: Expected to find element: `.hmenu-title`, but never found it.\n    at Context.eval (https://www.amazon.com/__cypress/tests?p=cypress/integration/scenario2.spec.js:116:8)",
+                                "diff": null
+                            },
+                            "uuid": "3eae5efa-1937-4128-8d49-7c96f3a618f3",
+                            "parentUUID": "ddc08d16-3bc4-4ac1-afba-cfb1df7906f4",
+                            "isHook": false,
+                            "skipped": false
+                        },
+                        {
+                            "title": "Selects Televisions category",
+                            "fullTitle": "Check displayed number of results for category Smart Home | Televisions Selects Televisions category",
+                            "timedOut": null,
+                            "duration": 4501,
+                            "state": "failed",
+                            "speed": null,
+                            "pass": false,
+                            "fail": true,
+                            "pending": false,
+                            "context": null,
+                            "code": "cy.get('.hmenu-item').contains('Televisions').click();\ncy.get('h1').contains(/^Smart Home \\| Televisions$/).should('be.visible');",
+                            "err": {
+                                "message": "AssertionError: Timed out retrying: Expected to find element: `.hmenu-item`, but never found it.",
+                                "estack": "AssertionError: Timed out retrying: Expected to find element: `.hmenu-item`, but never found it.\n    at Context.eval (https://www.amazon.com/__cypress/tests?p=cypress/integration/scenario2.spec.js:119:8)",
+                                "diff": null
+                            },
+                            "uuid": "8d2c984b-c7e6-4d87-8471-b3f8a0a40045",
+                            "parentUUID": "ddc08d16-3bc4-4ac1-afba-cfb1df7906f4",
+                            "isHook": false,
+                            "skipped": false
+                        },
+                        {
+                            "title": "Verifies number of displayed items is equal to total number",
+                            "fullTitle": "Check displayed number of results for category Smart Home | Televisions Verifies number of displayed items is equal to total number",
+                            "timedOut": null,
+                            "duration": 4434,
+                            "state": "failed",
+                            "speed": null,
+                            "pass": false,
+                            "fail": true,
+                            "pending": false,
+                            "context": null,
+                            "code": "var countNext = function countNext(realCount, totalCount) {\n  realCount += Cypress.$('.s-asin, [data-asin] > .s-item-container').length;\n  var nextButton = Cypress.$('#pagnNextLink, .a-pagination .a-last:not(.a-disabled)');\n  if (nextButton.length) {\n    cy.wrap(nextButton).click();\n    cy.get('#pagn, .a-pagination').then(function () {\n      countNext(realCount, totalCount);\n    });\n  } else {\n    cy.wrap(realCount).should('eq', totalCount);\n  }\n};\nvar totalCount = 0;\ncy.get('#s-result-count').invoke('text').then(function (text) {\n  totalCount = parseInt(text.split(' ')[2], 10);\n  countNext(0, totalCount);\n});",
+                            "err": {
+                                "message": "AssertionError: Timed out retrying: Expected to find element: `#s-result-count`, but never found it.",
+                                "estack": "AssertionError: Timed out retrying: Expected to find element: `#s-result-count`, but never found it.\n    at Context.eval (https://www.amazon.com/__cypress/tests?p=cypress/integration/scenario2.spec.js:138:8)",
+                                "diff": null
+                            },
+                            "uuid": "faf7ce5a-e273-4cd9-b22e-b683468a3048",
+                            "parentUUID": "ddc08d16-3bc4-4ac1-afba-cfb1df7906f4",
+                            "isHook": false,
+                            "skipped": false
+                        }
+                    ],
+                    "suites": [],
+                    "passes": [],
+                    "failures": [
+                        "3eae5efa-1937-4128-8d49-7c96f3a618f3",
+                        "8d2c984b-c7e6-4d87-8471-b3f8a0a40045",
+                        "faf7ce5a-e273-4cd9-b22e-b683468a3048"
+                    ],
+                    "pending": [],
+                    "skipped": [],
+                    "duration": 24459,
+                    "root": false,
+                    "rootEmpty": false,
+                    "_timeout": 2000
+                }
+            ],
+            "passes": [],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": true,
+            "rootEmpty": true,
+            "_timeout": 2000
+        },
+        {
+            "uuid": "973405ac-f813-42d1-bb94-301a64577e13",
+            "title": "",
+            "fullFile": "cypress/integration/scenario3.spec.js",
+            "file": "cypress/integration/scenario3.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [],
+            "suites": [
+                {
+                    "uuid": "dd2991b6-df56-4eed-8338-59b10db7c491",
+                    "title": "Check the selected currency displayed for the products' price",
+                    "fullFile": "",
+                    "file": "",
+                    "beforeHooks": [],
+                    "afterHooks": [],
+                    "tests": [
+                        {
+                            "title": "Changes currency to AED and verifies it is changed",
+                            "fullTitle": "Check the selected currency displayed for the products' price Changes currency to AED and verifies it is changed",
+                            "timedOut": null,
+                            "duration": 14154,
+                            "state": "passed",
+                            "speed": "slow",
+                            "pass": true,
+                            "fail": false,
+                            "pending": false,
+                            "context": null,
+                            "code": "cy.get('#icp-nav-flyout').click();\ncy.get('#icp-sc-heading').should('be.visible');\ncy.get('#icp-sc-dropdown').select('AED', {\n  force: true\n});\ncy.get('.a-button-input').click();\ncy.contains('Shop now').click();\ncy.contains('AED').should('be.visible');",
+                            "err": {},
+                            "uuid": "f2f2859b-5652-44b3-a4fc-a98e6345292b",
+                            "parentUUID": "dd2991b6-df56-4eed-8338-59b10db7c491",
+                            "isHook": false,
+                            "skipped": false
+                        }
+                    ],
+                    "suites": [],
+                    "passes": ["f2f2859b-5652-44b3-a4fc-a98e6345292b"],
+                    "failures": [],
+                    "pending": [],
+                    "skipped": [],
+                    "duration": 14154,
+                    "root": false,
+                    "rootEmpty": false,
+                    "_timeout": 2000
+                }
+            ],
+            "passes": [],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": true,
+            "rootEmpty": true,
+            "_timeout": 2000
+        },
+        {
+            "uuid": "515d4580-05f8-43b4-9408-6c972aa69eac",
+            "title": "",
+            "fullFile": "cypress/integration/scenario1.spec.js",
+            "file": "cypress/integration/scenario1.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [],
+            "suites": [
+                {
+                    "uuid": "7a5ad162-2e46-45f6-9592-4ca6798f47e5",
+                    "title": "Check your gift cards balance is $0.00",
+                    "fullFile": "",
+                    "file": "",
+                    "beforeHooks": [],
+                    "afterHooks": [],
+                    "tests": [
+                        {
+                            "title": "Logs in and checks gift card balance",
+                            "fullTitle": "Check your gift cards balance is $0.00 Logs in and checks gift card balance",
+                            "timedOut": null,
+                            "duration": 24263,
+                            "state": "passed",
+                            "speed": "slow",
+                            "pass": true,
+                            "fail": false,
+                            "pending": false,
+                            "context": null,
+                            "code": "cy.get('.nav-a.nav-a-2[data-nav-role=\"signin\"]').trigger('mouseover');\ncy.get('#nav-flyout-ya-signin').click();\ncy.contains('Sign-In').should('be.visible');\ncy.get('#ap_email').type(username);\ncy.get('#continue').click();\ncy.contains('Password').should('be.visible');\ncy.get('#ap_password').type(password);\ncy.get('#signInSubmit').click();\ncy.contains('Hello, Anna').should('exist');\ncy.get('.nav-a.nav-a-2[data-nav-role=\"signin\"]').trigger('mouseover');\ncy.get('a > .nav-text').contains('Your Account').click();\ncy.get('.ya-card__heading--rich').contains('Gift cards').click();\ncy.contains('Your Gift Card Balance').should('be.visible');\ncy.get('#gc-ui-balance-gc-balance-value').then(function (cardBalance) {\n  var cardBalanceText = cardBalance.get(0).innerText;\n  cy.wrap('$0.00').should('eq', cardBalanceText);\n});",
+                            "err": {},
+                            "uuid": "5d22c89e-e5f5-416a-a990-0f253557b956",
+                            "parentUUID": "7a5ad162-2e46-45f6-9592-4ca6798f47e5",
+                            "isHook": false,
+                            "skipped": false
+                        }
+                    ],
+                    "suites": [],
+                    "passes": ["5d22c89e-e5f5-416a-a990-0f253557b956"],
+                    "failures": [],
+                    "pending": [],
+                    "skipped": [],
+                    "duration": 24263,
+                    "root": false,
+                    "rootEmpty": false,
+                    "_timeout": 2000
+                }
+            ],
+            "passes": [],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": true,
+            "rootEmpty": true,
+            "_timeout": 2000
+        }
+    ],
+    "meta": {
+        "mocha": {
+            "version": "7.0.1"
+        },
+        "mochawesome": {
+            "options": {
+                "quiet": false,
+                "reportFilename": "mochawesome",
+                "saveHtml": false,
+                "saveJson": true,
+                "consoleReporter": "spec",
+                "useInlineDiffs": false,
+                "code": true
+            },
+            "version": "6.1.1"
+        },
+        "marge": {
+            "options": {
+                "reportDir": "cypress/results",
+                "overwrite": false,
+                "html": false,
+                "json": true
+            },
+            "version": "5.1.0"
+        }
+    }
+}

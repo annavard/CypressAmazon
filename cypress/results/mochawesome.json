@@ -1,0 +1,103 @@
+{
+    "stats": {
+        "suites": 1,
+        "tests": 1,
+        "passes": 1,
+        "pending": 0,
+        "failures": 0,
+        "start": "2020-10-12T15:38:16.402Z",
+        "end": "2020-10-12T15:38:43.556Z",
+        "duration": 27154,
+        "testsRegistered": 1,
+        "passPercent": 100,
+        "pendingPercent": 0,
+        "other": 0,
+        "hasOther": false,
+        "skipped": 0,
+        "hasSkipped": false
+    },
+    "results": [
+        {
+            "uuid": "515d4580-05f8-43b4-9408-6c972aa69eac",
+            "title": "",
+            "fullFile": "cypress/integration/scenario1.spec.js",
+            "file": "cypress/integration/scenario1.spec.js",
+            "beforeHooks": [],
+            "afterHooks": [],
+            "tests": [],
+            "suites": [
+                {
+                    "uuid": "7a5ad162-2e46-45f6-9592-4ca6798f47e5",
+                    "title": "Check your gift cards balance is $0.00",
+                    "fullFile": "",
+                    "file": "",
+                    "beforeHooks": [],
+                    "afterHooks": [],
+                    "tests": [
+                        {
+                            "title": "Logs in and checks gift card balance",
+                            "fullTitle": "Check your gift cards balance is $0.00 Logs in and checks gift card balance",
+                            "timedOut": null,
+                            "duration": 24263,
+                            "state": "passed",
+                            "speed": "slow",
+                            "pass": true,
+                            "fail": false,
+                            "pending": false,
+                            "context": null,
+                            "code": "cy.get('.nav-a.nav-a-2[data-nav-role=\"signin\"]').trigger('mouseover');\ncy.get('#nav-flyout-ya-signin').click();\ncy.contains('Sign-In').should('be.visible');\ncy.get('#ap_email').type(username);\ncy.get('#continue').click();\ncy.contains('Password').should('be.visible');\ncy.get('#ap_password').type(password);\ncy.get('#signInSubmit').click();\ncy.contains('Hello, Anna').should('exist');\ncy.get('.nav-a.nav-a-2[data-nav-role=\"signin\"]').trigger('mouseover');\ncy.get('a > .nav-text').contains('Your Account').click();\ncy.get('.ya-card__heading--rich').contains('Gift cards').click();\ncy.contains('Your Gift Card Balance').should('be.visible');\ncy.get('#gc-ui-balance-gc-balance-value').then(function (cardBalance) {\n  var cardBalanceText = cardBalance.get(0).innerText;\n  cy.wrap('$0.00').should('eq', cardBalanceText);\n});",
+                            "err": {},
+                            "uuid": "5d22c89e-e5f5-416a-a990-0f253557b956",
+                            "parentUUID": "7a5ad162-2e46-45f6-9592-4ca6798f47e5",
+                            "isHook": false,
+                            "skipped": false
+                        }
+                    ],
+                    "suites": [],
+                    "passes": ["5d22c89e-e5f5-416a-a990-0f253557b956"],
+                    "failures": [],
+                    "pending": [],
+                    "skipped": [],
+                    "duration": 24263,
+                    "root": false,
+                    "rootEmpty": false,
+                    "_timeout": 2000
+                }
+            ],
+            "passes": [],
+            "failures": [],
+            "pending": [],
+            "skipped": [],
+            "duration": 0,
+            "root": true,
+            "rootEmpty": true,
+            "_timeout": 2000
+        }
+    ],
+    "meta": {
+        "mocha": {
+            "version": "7.0.1"
+        },
+        "mochawesome": {
+            "options": {
+                "quiet": false,
+                "reportFilename": "mochawesome",
+                "saveHtml": false,
+                "saveJson": true,
+                "consoleReporter": "spec",
+                "useInlineDiffs": false,
+                "code": true
+            },
+            "version": "6.1.1"
+        },
+        "marge": {
+            "options": {
+                "reportDir": "cypress/results",
+                "overwrite": false,
+                "html": false,
+                "json": true
+            },
+            "version": "5.1.0"
+        }
+    }
+}
