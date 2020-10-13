@@ -10,7 +10,7 @@
 
    ```npm install```
 
-3. Running tests with HTML report.
+3. Run tests with HTML report.
 
    ```npm run cypress```
 
