@@ -4,7 +4,7 @@
 
 1. Clone the current repository into your machine.
 
-   ```git clone https://github.com/annavard/CypressAmazon.git```
+   ```git clone -b master https://github.com/annavard/CypressAmazon.git```
 
 2. Install cypress and other packages.
 
