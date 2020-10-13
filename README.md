@@ -5,6 +5,10 @@
 1. Clone the current repository into your machine.
 
    ```git clone https://github.com/annavard/CypressAmazon.git```
+   
+2. Enter the directory.
+
+   ```cd CypressAmazon```
 
 2. Install cypress and other packages.
 
