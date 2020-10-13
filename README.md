@@ -16,7 +16,7 @@
 
 4. Run tests on the browser.
 
-   -  ```npx cypress open```
+ -  ```npx cypress open```
    
-   - Click on Run All Tests button on the top right corner of Cypress window.
+ - Click on Run All Tests button on the top right corner of Cypress window.
       Or run test cases one by one as per your preference by clicking on the spec file.
